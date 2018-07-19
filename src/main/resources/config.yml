@@ -1,0 +1,9 @@
+XieAPI:
+  Database:
+    host: localhost
+    user: xierip
+    password: xierip
+    database: test
+    queueSize: 1024
+  Packet:
+    queueSize: 16384

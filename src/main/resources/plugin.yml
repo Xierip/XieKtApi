@@ -1,0 +1,6 @@
+name: XieAPI
+main: pl.xierip.xieapi.XieAPI
+author: Xierip
+version: 2.0
+depend: [ProtocolLib]
+softdepend: [Vault]
