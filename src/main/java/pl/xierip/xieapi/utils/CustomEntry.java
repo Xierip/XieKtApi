@@ -11,30 +11,30 @@ import java.util.Map;
  */
 public class CustomEntry<K, V> implements Map.Entry<K, V> {
 
-    private K key;
-    private V value;
+  private K key;
+  private V value;
 
-    public CustomEntry(final K key, final V value) {
-        this.key = key;
-        this.value = value;
-    }
+  public CustomEntry(final K key, final V value) {
+    this.key = key;
+    this.value = value;
+  }
 
 
-    @Override
-    public K getKey() {
-        return key;
-    }
+  @Override
+  public K getKey() {
+    return key;
+  }
 
-    @Override
-    public V getValue() {
-        return value;
-    }
+  @Override
+  public V getValue() {
+    return value;
+  }
 
-    @Override
-    public V setValue(final V value) {
-        final V v = this.value;
-        this.value = value;
-        return v;
-    }
+  @Override
+  public V setValue(final V value) {
+    final V v = this.value;
+    this.value = value;
+    return v;
+  }
 
 }

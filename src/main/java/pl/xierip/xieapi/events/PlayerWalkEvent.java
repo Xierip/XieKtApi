@@ -8,41 +8,42 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 /**
- * Created by xierip on 04.03.17.
- * Web: http://xierip.pl
+ * Created by xierip on 04.03.17. Web: http://xierip.pl
  */
 public class PlayerWalkEvent extends Event implements Cancellable {
-    private static final HandlerList handlers = new HandlerList();
-    private boolean canceled;
-    @Getter
-    private Location fromLocation;
-    @Getter
-    private Player player;
-    @Getter
-    private Location toLocation;
 
-    public PlayerWalkEvent(final Player player, final Location fromLocation, final Location toLocation) {
-        this.player = player;
-        this.fromLocation = fromLocation;
-        this.toLocation = toLocation;
-    }
+  private static final HandlerList handlers = new HandlerList();
+  private boolean canceled;
+  @Getter
+  private Location fromLocation;
+  @Getter
+  private Player player;
+  @Getter
+  private Location toLocation;
 
-    public static HandlerList getHandlerList() {
-        return handlers;
-    }
+  public PlayerWalkEvent(final Player player, final Location fromLocation,
+      final Location toLocation) {
+    this.player = player;
+    this.fromLocation = fromLocation;
+    this.toLocation = toLocation;
+  }
 
-    @Override
-    public HandlerList getHandlers() {
-        return handlers;
-    }
+  public static HandlerList getHandlerList() {
+    return handlers;
+  }
 
-    @Override
-    public boolean isCancelled() {
-        return this.canceled;
-    }
+  @Override
+  public HandlerList getHandlers() {
+    return handlers;
+  }
 
-    @Override
-    public void setCancelled(final boolean b) {
-        this.canceled = b;
-    }
+  @Override
+  public boolean isCancelled() {
+    return this.canceled;
+  }
+
+  @Override
+  public void setCancelled(final boolean b) {
+    this.canceled = b;
+  }
 }

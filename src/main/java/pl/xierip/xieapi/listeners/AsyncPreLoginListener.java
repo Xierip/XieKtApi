@@ -10,10 +10,12 @@ import pl.xierip.xieapi.utils.StringUtil;
  * @author Xierip on 24.11.2015.
  */
 public class AsyncPreLoginListener implements Listener {
-    @EventHandler
-    private void onEvent(final AsyncPlayerPreLoginEvent event) {
-        if (XieAPI.isDisabling()) {
-            event.disallow(AsyncPlayerPreLoginEvent.Result.KICK_OTHER, StringUtil.fixColors("&4Serwer jest restartowany!"));
-        }
+
+  @EventHandler
+  private void onEvent(final AsyncPlayerPreLoginEvent event) {
+    if (XieAPI.isDisabling()) {
+      event.disallow(AsyncPlayerPreLoginEvent.Result.KICK_OTHER,
+          StringUtil.fixColors("&4Serwer jest restartowany!"));
     }
+  }
 }

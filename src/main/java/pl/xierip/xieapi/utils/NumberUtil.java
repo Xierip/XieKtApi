@@ -39,55 +39,58 @@ import java.util.Optional;
  */
 
 public class NumberUtil {
-    public static int d(final float f1) {
-        final int i = (int) f1;
-        return f1 >= i ? i : i - 1;
+
+  public static int d(final float f1) {
+    final int i = (int) f1;
+    return f1 >= i ? i : i - 1;
+  }
+
+  public static int floor(final double d1) {
+    final int i = (int) d1;
+    return d1 >= i ? i : i - 1;
+  }
+
+  public static boolean isFloat(final String s) {
+    try {
+      Float.parseFloat(s);
+      return true;
+    } catch (final NumberFormatException ex) {
+      return false;
+    }
+  }
+
+  public static boolean isInt(String line) {
+    try {
+      Integer.parseInt(line);
+      return true;
+    } catch (final NumberFormatException ex) {
+      return false;
+    }
+  }
+
+  public static Optional<Integer> parseInt(final String s) {
+    try {
+      return Optional.of(Integer.parseInt(s));
+    } catch (final NumberFormatException ex) {
+      return Optional.empty();
+    }
+  }
+
+  public static Optional<Double> parseDouble(final String s) {
+    try {
+      return Optional.of(Double.parseDouble(s));
+    } catch (final NumberFormatException ex) {
+      return Optional.empty();
+    }
+  }
+
+  public static double round(double value, int places) {
+    if (places < 0) {
+      throw new IllegalArgumentException();
     }
 
-    public static int floor(final double d1) {
-        final int i = (int) d1;
-        return d1 >= i ? i : i - 1;
-    }
-
-    public static boolean isFloat(final String s) {
-        try {
-            Float.parseFloat(s);
-            return true;
-        } catch (final NumberFormatException ex) {
-            return false;
-        }
-    }
-
-    public static boolean isInt(String line) {
-        try {
-            Integer.parseInt(line);
-            return true;
-        } catch (final NumberFormatException ex) {
-            return false;
-        }
-    }
-
-    public static Optional<Integer> parseInt(final String s) {
-        try {
-            return Optional.of(Integer.parseInt(s));
-        } catch (final NumberFormatException ex) {
-            return Optional.empty();
-        }
-    }
-
-    public static Optional<Double> parseDouble(final String s) {
-        try {
-            return Optional.of(Double.parseDouble(s));
-        } catch (final NumberFormatException ex) {
-            return Optional.empty();
-        }
-    }
-
-    public static double round(double value, int places) {
-        if (places < 0) throw new IllegalArgumentException();
-
-        BigDecimal bd = new BigDecimal(value);
-        bd = bd.setScale(places, RoundingMode.HALF_UP);
-        return bd.doubleValue();
-    }
+    BigDecimal bd = new BigDecimal(value);
+    bd = bd.setScale(places, RoundingMode.HALF_UP);
+    return bd.doubleValue();
+  }
 }

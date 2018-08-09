@@ -4,30 +4,31 @@ import lombok.Getter;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import pl.xierip.xieapi.objects.DelayTeleport;
+import pl.xierip.xieapi.teleport.DelayTeleport;
 
 /**
  * @author Xieirp.
  */
 public class TeleportCancelEvent extends Event {
-    private static final HandlerList handlers = new HandlerList();
-    @Getter
-    private DelayTeleport delayTeleport;
-    @Getter
-    private Player player;
 
-    public TeleportCancelEvent(final Player player, final DelayTeleport delayTeleport) {
-        this.player = player;
-        this.delayTeleport = delayTeleport;
-    }
+  private static final HandlerList handlers = new HandlerList();
+  @Getter
+  private DelayTeleport delayTeleport;
+  @Getter
+  private Player player;
 
-    public static HandlerList getHandlerList() {
-        return handlers;
-    }
+  public TeleportCancelEvent(final Player player, final DelayTeleport delayTeleport) {
+    this.player = player;
+    this.delayTeleport = delayTeleport;
+  }
 
-    @Override
-    public HandlerList getHandlers() {
-        return handlers;
-    }
+  public static HandlerList getHandlerList() {
+    return handlers;
+  }
+
+  @Override
+  public HandlerList getHandlers() {
+    return handlers;
+  }
 
 }

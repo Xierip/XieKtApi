@@ -31,6 +31,8 @@ dependencies {
     compileOnly files('/home/xierip/Intellij/XieKtPvpSystem/libs/paper.jar')
     compileOnly "org.projectlombok:lombok:1.16.16"
     compileOnly 'com.comphenix.protocol:ProtocolLib-API:4.4.0-SNAPSHOT'
+    compile group: 'org.mongodb', name: 'mongodb-driver-async', version: '3.7.0'
+    compile group: 'org.mongodb', name: 'mongodb-driver', version: '3.7.0'
     compile group: 'com.zaxxer', name: 'HikariCP', version: '2.6.1'
 }
 compileKotlin {

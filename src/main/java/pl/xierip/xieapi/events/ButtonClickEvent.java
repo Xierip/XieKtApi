@@ -12,26 +12,27 @@ import org.bukkit.material.Button;
  * @author Xierip
  */
 public class ButtonClickEvent extends Event {
-    private static final HandlerList handlers = new HandlerList();
-    @Getter
-    private Block blockBehind;
-    @Getter
-    private Button button;
-    @Getter
-    private Player player;
 
-    public ButtonClickEvent(Player player, Block blockBehind, Button button) {
-        this.player = player;
-        this.blockBehind = blockBehind;
-        this.button = button;
-    }
+  private static final HandlerList handlers = new HandlerList();
+  @Getter
+  private Block blockBehind;
+  @Getter
+  private Button button;
+  @Getter
+  private Player player;
 
-    public static HandlerList getHandlerList() {
-        return handlers;
-    }
+  public ButtonClickEvent(Player player, Block blockBehind, Button button) {
+    this.player = player;
+    this.blockBehind = blockBehind;
+    this.button = button;
+  }
 
-    @Override
-    public HandlerList getHandlers() {
-        return handlers;
-    }
+  public static HandlerList getHandlerList() {
+    return handlers;
+  }
+
+  @Override
+  public HandlerList getHandlers() {
+    return handlers;
+  }
 }
